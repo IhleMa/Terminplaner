@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -9,135 +10,42 @@ namespace Terminplaner.Pages
     /// </summary>
     public partial class MonthView : Page
     {
-        DateTime date = DateTime.Now;
+        public DateTime date;
+        DateTime previousMonth;
+        DateTime firstDayOfMonth;
+        Brush defaultColor = Brushes.White;
+        Brush color = Brushes.Gray;
 
-        public MonthView()
+        public MonthView(DateTime _now)
         {
             InitializeComponent();
-            init();
+            init(_now);
         }
 
-        private void init()
+        private void init(DateTime _now)
         {
+            date = _now;
+
             loadCurrentMonth();
         }
 
-        private void loadCurrentMonth()
+        public void loadCurrentMonth()
         {
-            DateTime previousMonth = new DateTime(date.Year, date.Month - 1, DateTime.DaysInMonth(date.Year, date.Month));
-            DateTime firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
-            DateTime nextMonth = new DateTime(date.Year, date.Month + 1, 1);
-            int CW = getIsoWeek(date) % 100;
-            int i = 0;
-            Brush color = Brushes.Gray;
+            int i;
 
-            weekOneTextBox.Text = "CW " + CW.ToString();
-            weekTwoTextBox.Text = "CW" + (CW + 1).ToString();
-            weekThreeTextBox.Text = "CW" + (CW + 2).ToString();
-            weekFourTextBox.Text = "CW" + (CW + 3).ToString();
-            weekFiveTextBox.Text = "CW" + (CW + 4).ToString();
-
-            switch (firstDayOfMonth.DayOfWeek)
+            if (date.Month == 1)
             {
-                case DayOfWeek.Monday:
-                    dayOneDateTextBox.Text = firstDayOfMonth.Day.ToString();
-                    dayTwoDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
-                    dayThreeDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
-                    dayFourDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
-                    dayFiveDateTextBox.Text = firstDayOfMonth.AddDays(4).Day.ToString();
-                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(5).Day.ToString();
-                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(6).Day.ToString();
-                    break;
-                case DayOfWeek.Tuesday:
-                    i = 1;
-
-                    dayOneDateTextBox.Text = previousMonth.Day.ToString();
-                    dayOneGrid.Background = color;
-                    dayTwoDateTextBox.Text = firstDayOfMonth.Day.ToString();
-                    dayThreeDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
-                    dayFourDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
-                    dayFiveDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
-                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(4).Day.ToString();
-                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(5).Day.ToString();
-                    break;
-                case DayOfWeek.Wednesday:
-                    i = 2;
-
-                    dayOneDateTextBox.Text = (previousMonth.Day - 1).ToString();
-                    dayOneGrid.Background = color;
-                    dayTwoDateTextBox.Text = previousMonth.Day.ToString();
-                    dayTwoGrid.Background = color;
-                    dayThreeDateTextBox.Text = firstDayOfMonth.Day.ToString();
-                    dayFourDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
-                    dayFiveDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
-                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
-                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(4).Day.ToString();
-                    break;
-                case DayOfWeek.Thursday:
-                    i = 3;
-
-                    dayOneDateTextBox.Text = (previousMonth.Day - 2).ToString();
-                    dayOneGrid.Background = color;
-                    dayTwoDateTextBox.Text = (previousMonth.Day - 1).ToString();
-                    dayTwoGrid.Background = color;
-                    dayThreeDateTextBox.Text = previousMonth.Day.ToString();
-                    dayThreeGrid.Background = color;
-                    dayFourDateTextBox.Text = firstDayOfMonth.Day.ToString();
-                    dayFiveDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
-                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
-                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
-                    break;
-                case DayOfWeek.Friday:
-                    i = 4;
-                    
-                    dayOneDateTextBox.Text = (previousMonth.Day - 3).ToString();
-                    dayOneGrid.Background = color;
-                    dayTwoDateTextBox.Text = (previousMonth.Day - 2).ToString();
-                    dayTwoGrid.Background = color;
-                    dayThreeDateTextBox.Text = (previousMonth.Day - 1).ToString();
-                    dayThreeGrid.Background = color;
-                    dayFourDateTextBox.Text = previousMonth.Day.ToString();
-                    dayFourGrid.Background = color;
-                    dayFiveDateTextBox.Text = firstDayOfMonth.Day.ToString();
-                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
-                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
-                    break;
-                case DayOfWeek.Saturday:
-                    i = 5;
-
-                    dayOneDateTextBox.Text = (previousMonth.Day - 4).ToString();
-                    dayOneGrid.Background = color;
-                    dayTwoDateTextBox.Text = (previousMonth.Day - 3).ToString();
-                    dayTwoGrid.Background = color;
-                    dayThreeDateTextBox.Text = (previousMonth.Day - 2).ToString();
-                    dayThreeGrid.Background = color;
-                    dayFourDateTextBox.Text = (previousMonth.Day - 1).ToString();
-                    dayFourGrid.Background = color;
-                    dayFiveDateTextBox.Text = previousMonth.Day.ToString();
-                    dayFiveGrid.Background = color;
-                    daySixDateTextBox.Text = firstDayOfMonth.Day.ToString();
-                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
-                    break;
-                case DayOfWeek.Sunday:
-                    i = 6;
-
-                    dayOneDateTextBox.Text = (previousMonth.Day - 5).ToString();
-                    dayOneGrid.Background = color;
-                    dayTwoDateTextBox.Text = (previousMonth.Day - 4).ToString();
-                    dayTwoGrid.Background = color;
-                    dayThreeDateTextBox.Text = (previousMonth.Day - 3).ToString();
-                    dayThreeGrid.Background = color;
-                    dayFourDateTextBox.Text = (previousMonth.Day - 2).ToString();
-                    dayFourGrid.Background = color;
-                    dayFiveDateTextBox.Text = (previousMonth.Day - 1).ToString();
-                    dayFiveGrid.Background = color;
-                    daySixDateTextBox.Text = previousMonth.Day.ToString();
-                    daySixGrid.Background = color;
-                    daySevenDateTextBox.Text = firstDayOfMonth.Day.ToString();
-                    break;
-                default:
-                    break;
+                previousMonth = new DateTime(date.Year - 1, 12, DateTime.DaysInMonth(date.Year - 1, 12));
             }
+            else
+            {
+                previousMonth = new DateTime(date.Year, date.Month - 1, DateTime.DaysInMonth(date.Year, date.Month - 1));
+            }
+
+            firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+
+            loadCW();
+            i = loadFirstWeek();
 
             dayEightDateTextBox.Text = firstDayOfMonth.AddDays(7 - i).Day.ToString();
             dayNineDateTextBox.Text = firstDayOfMonth.AddDays(8 - i).Day.ToString();
@@ -164,51 +72,209 @@ namespace Terminplaner.Pages
             dayTwentynineDateTextBox.Text = firstDayOfMonth.AddDays(28 - i).Day.ToString();
 
             if (28 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-            {
                 dayTwentynineGrid.Background = color;
-            }
+            else
+                dayTwentynineGrid.Background = defaultColor;
 
             dayThirtyDateTextBox.Text = firstDayOfMonth.AddDays(29 - i).Day.ToString();
 
             if (29 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-            {
                 dayThirtyGrid.Background = color;
-            }
+            else
+                dayThirtyGrid.Background = defaultColor;
 
             dayThirtyoneDateTextBox.Text = firstDayOfMonth.AddDays(30 - i).Day.ToString();
 
             if (30 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-            {
                 dayThirtyoneGrid.Background = color;
-            }
+            else
+                dayThirtyoneGrid.Background = defaultColor;
 
             dayThirtytwoDateTextBox.Text = firstDayOfMonth.AddDays(31 - i).Day.ToString();
 
             if (31 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-            {
                 dayThirtytwoGrid.Background = color;
-            }
+            else
+                dayThirtytwoGrid.Background = defaultColor;
 
             dayThirtythreeDateTextBox.Text = firstDayOfMonth.AddDays(32 - i).Day.ToString();
 
             if (32 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-            {
-                dayThirtytwoGrid.Background = color;
-            }
+                dayThirtythreeGrid.Background = color;
+            else
+                dayThirtythreeGrid.Background = defaultColor;
 
             dayThirtyfourDateTextBox.Text = firstDayOfMonth.AddDays(33 - i).Day.ToString();
 
             if (33 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-            {
-                dayThirtythreeGrid.Background = color;
-            }
+                dayThirtyfourGrid.Background = color;
+            else
+                dayThirtyfourGrid.Background = defaultColor;
 
             dayThirtyfiveDateTextBox.Text = firstDayOfMonth.AddDays(34 - i).Day.ToString();
 
             if (34 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-            {
                 dayThirtyfiveGrid.Background = color;
+            else
+                dayThirtyfiveGrid.Background = defaultColor;
+
+            if ((firstDayOfMonth.DayOfWeek == DayOfWeek.Sunday && DateTime.DaysInMonth(firstDayOfMonth.Year, firstDayOfMonth.Month) >= 30) || (firstDayOfMonth.DayOfWeek == DayOfWeek.Saturday && DateTime.DaysInMonth(firstDayOfMonth.Year, firstDayOfMonth.Month) >= 31))
+            {
+                dayTwentynineDateTextBox.Text += "/30";
             }
+
+            if (firstDayOfMonth.DayOfWeek == DayOfWeek.Sunday && DateTime.DaysInMonth(firstDayOfMonth.Year, firstDayOfMonth.Month) >= 31)
+            {
+                dayThirtyDateTextBox.Text += "/31";
+            }
+        }
+
+        private void loadCW()
+        {
+            int CW = getIsoWeek(date) % 100;
+
+            weekOneTextBox.Text = "CW " + CW.ToString();
+            weekTwoTextBox.Text = "CW " + (CW + 1).ToString();
+            weekThreeTextBox.Text = "CW " + (CW + 2).ToString();
+            weekFourTextBox.Text = "CW " + (CW + 3).ToString();
+            weekFiveTextBox.Text = "CW " + (CW + 4).ToString();
+        }
+
+        private int loadFirstWeek()
+        {
+            int ret = 0;
+
+            switch (firstDayOfMonth.DayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    dayOneDateTextBox.Text = firstDayOfMonth.Day.ToString();
+                    dayTwoDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
+                    dayThreeDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
+                    dayFourDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
+                    dayFiveDateTextBox.Text = firstDayOfMonth.AddDays(4).Day.ToString();
+                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(5).Day.ToString();
+                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(6).Day.ToString();
+
+                    dayOneGrid.Background = defaultColor;
+                    dayTwoGrid.Background = defaultColor;
+                    dayThreeGrid.Background = defaultColor;
+                    dayFourGrid.Background = defaultColor;
+                    dayFiveGrid.Background = defaultColor;
+                    daySixGrid.Background = defaultColor;
+                    break;
+                case DayOfWeek.Tuesday:
+                    ret = 1;
+
+                    dayOneDateTextBox.Text = previousMonth.Day.ToString();
+                    dayTwoDateTextBox.Text = firstDayOfMonth.Day.ToString();
+                    dayThreeDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
+                    dayFourDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
+                    dayFiveDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
+                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(4).Day.ToString();
+                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(5).Day.ToString();
+
+                    dayOneGrid.Background = color;
+                    dayTwoGrid.Background = defaultColor;
+                    dayThreeGrid.Background = defaultColor;
+                    dayFourGrid.Background = defaultColor;
+                    dayFiveGrid.Background = defaultColor;
+                    daySixGrid.Background = defaultColor;
+                    break;
+                case DayOfWeek.Wednesday:
+                    ret = 2;
+
+                    dayOneDateTextBox.Text = (previousMonth.Day - 1).ToString();
+                    dayTwoDateTextBox.Text = previousMonth.Day.ToString();
+                    dayThreeDateTextBox.Text = firstDayOfMonth.Day.ToString();
+                    dayFourDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
+                    dayFiveDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
+                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
+                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(4).Day.ToString();
+
+                    dayOneGrid.Background = color;
+                    dayTwoGrid.Background = color;
+                    dayThreeGrid.Background = defaultColor;
+                    dayFourGrid.Background = defaultColor;
+                    dayFiveGrid.Background = defaultColor;
+                    daySixGrid.Background = defaultColor;
+                    break;
+                case DayOfWeek.Thursday:
+                    ret = 3;
+
+                    dayOneDateTextBox.Text = (previousMonth.Day - 2).ToString();
+                    dayTwoDateTextBox.Text = (previousMonth.Day - 1).ToString();
+                    dayThreeDateTextBox.Text = previousMonth.Day.ToString();
+                    dayFourDateTextBox.Text = firstDayOfMonth.Day.ToString();
+                    dayFiveDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
+                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
+                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
+
+                    dayOneGrid.Background = color;
+                    dayTwoGrid.Background = color;
+                    dayThreeGrid.Background = color;
+                    dayFourGrid.Background = defaultColor;
+                    dayFiveGrid.Background = defaultColor;
+                    daySixGrid.Background = defaultColor;
+                    break;
+                case DayOfWeek.Friday:
+                    ret = 4;
+
+                    dayOneDateTextBox.Text = (previousMonth.Day - 3).ToString();
+                    dayTwoDateTextBox.Text = (previousMonth.Day - 2).ToString();
+                    dayThreeDateTextBox.Text = (previousMonth.Day - 1).ToString();
+                    dayFourDateTextBox.Text = previousMonth.Day.ToString();
+                    dayFiveDateTextBox.Text = firstDayOfMonth.Day.ToString();
+                    daySixDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
+                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
+
+                    dayOneGrid.Background = color;
+                    dayTwoGrid.Background = color;
+                    dayThreeGrid.Background = color;
+                    dayFourGrid.Background = color;
+                    dayFiveGrid.Background = defaultColor;
+                    daySixGrid.Background = defaultColor;
+                    break;
+                case DayOfWeek.Saturday:
+                    ret = 5;
+
+                    dayOneDateTextBox.Text = (previousMonth.Day - 4).ToString();
+                    dayTwoDateTextBox.Text = (previousMonth.Day - 3).ToString();
+                    dayThreeDateTextBox.Text = (previousMonth.Day - 2).ToString();
+                    dayFourDateTextBox.Text = (previousMonth.Day - 1).ToString();
+                    dayFiveDateTextBox.Text = previousMonth.Day.ToString();
+                    daySixDateTextBox.Text = firstDayOfMonth.Day.ToString();
+                    daySevenDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
+
+                    dayOneGrid.Background = color;
+                    dayTwoGrid.Background = color;
+                    dayThreeGrid.Background = color;
+                    dayFourGrid.Background = color;
+                    dayFiveGrid.Background = color;
+                    daySixGrid.Background = defaultColor;
+                    break;
+                case DayOfWeek.Sunday:
+                    ret = 6;
+
+                    dayOneDateTextBox.Text = (previousMonth.Day - 5).ToString();
+                    dayTwoDateTextBox.Text = (previousMonth.Day - 4).ToString();
+                    dayThreeDateTextBox.Text = (previousMonth.Day - 3).ToString();
+                    dayFourDateTextBox.Text = (previousMonth.Day - 2).ToString();
+                    dayFiveDateTextBox.Text = (previousMonth.Day - 1).ToString();
+                    daySixDateTextBox.Text = previousMonth.Day.ToString();
+                    daySevenDateTextBox.Text = firstDayOfMonth.Day.ToString();
+
+                    dayOneGrid.Background = color;
+                    dayTwoGrid.Background = color;
+                    dayThreeGrid.Background = color;
+                    dayFourGrid.Background = color;
+                    dayFiveGrid.Background = color;
+                    daySixGrid.Background = color;
+                    break;
+                default:
+                    break;
+            }
+
+            return ret;
         }
 
         private DateTime getIsoWeekOne(int _year)
@@ -246,6 +312,50 @@ namespace Terminplaner.Pages
             }
 
             return (isoYear * 100) + ((_dt - week1).Days / 7 + 1);
+        }
+
+        public string showPreviousMonth()
+        {
+            int year = date.Year;
+            int month = date.Month;
+
+            if (date.Month == 1)
+            {
+                year--;
+                month = 12;
+            }
+            else
+            {
+                month--;
+            }
+
+            date = new DateTime(year, month, 1);
+
+            loadCurrentMonth();
+
+            return DateAndTime.MonthName(date.Month) + " " + date.Year;
+        }
+
+        public string showNextMonth()
+        {
+            int year = date.Year;
+            int month = date.Month;
+
+            if (date.Month == 12)
+            {
+                year++;
+                month = 1;
+            }
+            else
+            {
+                month++;
+            }
+
+            date = new DateTime(year, month, 1);
+
+            loadCurrentMonth();
+
+            return DateAndTime.MonthName(date.Month) + " " + date.Year;
         }
     }
 }

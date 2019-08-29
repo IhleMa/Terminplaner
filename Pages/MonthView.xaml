@@ -46,8 +46,8 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.35*"/>
-                    <ColumnDefinition Width="0.65*"/>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition Width="0.55*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="dayOneDateTextBox" Grid.Column="0" FontSize="12"  FontFamily="Consolas" IsReadOnly="True"  BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold" Background="Transparent"/>
@@ -181,8 +181,8 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.35*"/>
-                    <ColumnDefinition Width="0.65*"/>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition Width="0.55*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="dayEightDateTextBox" Grid.Column="0" FontSize="12"  FontFamily="Consolas" IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"/>
@@ -316,8 +316,8 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.35*"/>
-                    <ColumnDefinition Width="0.65*"/>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition Width="0.55*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="dayFifteenDateTextBox" Grid.Column="0" FontSize="12"  FontFamily="Consolas" IsReadOnly="True"  Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"/>
@@ -451,8 +451,8 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.35*"/>
-                    <ColumnDefinition Width="0.65*"/>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition Width="0.55*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="dayTwentytwoDateTextBox" Grid.Column="0" FontSize="12"  FontFamily="Consolas" IsReadOnly="True"  Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"/>
@@ -586,8 +586,8 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.35*"/>
-                    <ColumnDefinition Width="0.65*"/>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition Width="0.55*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="dayTwentynineDateTextBox" Grid.Column="0" FontSize="12"  FontFamily="Consolas" IsReadOnly="True"  Background="Transparent" BorderBrush="Transparent" BorderThickness="0" FontWeight="Bold"/>

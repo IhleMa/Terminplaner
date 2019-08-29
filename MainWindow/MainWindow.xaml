@@ -36,9 +36,9 @@
                     <ColumnDefinition Width="0.2*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Name="previousDateButton" Content="🡄" Grid.Column="0" Margin="2"/>
-                <TextBox Name="currentDateTextBox" Text="" Grid.Column="1" Margin="2" IsReadOnly="True" TextWrapping="Wrap"/>
-                <Button Name="nextDateButton" Content="🡆" Grid.Column="2" Margin="2"/>
+                <Button Name="previousDateButton" Content="🡄" Grid.Column="0" Margin="2" Click="PreviousDateButton_Click"/>
+                <TextBox Name="currentDateTextBox" Text="" Grid.Column="1" Margin="2" IsReadOnly="True" TextWrapping="Wrap" TextAlignment="Center" />
+                <Button Name="nextDateButton" Content="🡆" Grid.Column="2" Margin="2" Click="NextDateButton_Click"/>
             </Grid>
             
             <Grid Name="navigationViewGrid" Grid.Column="3">
