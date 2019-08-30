@@ -13,8 +13,10 @@ namespace Terminplaner.Pages
         public DateTime date;
         DateTime previousMonth;
         DateTime firstDayOfMonth;
-        Brush defaultColor = Brushes.White;
-        Brush color = Brushes.Gray;
+        Brush currentMonthColor = Brushes.White;
+        Brush otherMonthColor = Brushes.Gray;
+        Brush todayBorderColor = Brushes.AliceBlue;
+        Brush defaultBorderColor = Brushes.Black;
 
         public MonthView(DateTime _now)
         {
@@ -27,6 +29,11 @@ namespace Terminplaner.Pages
             date = _now;
 
             loadCurrentMonth();
+        }
+
+        private void markToday()
+        {
+            
         }
 
         public void loadCurrentMonth()
@@ -72,51 +79,51 @@ namespace Terminplaner.Pages
             dayTwentynineDateTextBox.Text = firstDayOfMonth.AddDays(28 - i).Day.ToString();
 
             if (28 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-                dayTwentynineGrid.Background = color;
+                dayTwentynineGrid.Background = otherMonthColor;
             else
-                dayTwentynineGrid.Background = defaultColor;
+                dayTwentynineGrid.Background = currentMonthColor;
 
             dayThirtyDateTextBox.Text = firstDayOfMonth.AddDays(29 - i).Day.ToString();
 
             if (29 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-                dayThirtyGrid.Background = color;
+                dayThirtyGrid.Background = otherMonthColor;
             else
-                dayThirtyGrid.Background = defaultColor;
+                dayThirtyGrid.Background = currentMonthColor;
 
             dayThirtyoneDateTextBox.Text = firstDayOfMonth.AddDays(30 - i).Day.ToString();
 
             if (30 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-                dayThirtyoneGrid.Background = color;
+                dayThirtyoneGrid.Background = otherMonthColor;
             else
-                dayThirtyoneGrid.Background = defaultColor;
+                dayThirtyoneGrid.Background = currentMonthColor;
 
             dayThirtytwoDateTextBox.Text = firstDayOfMonth.AddDays(31 - i).Day.ToString();
 
             if (31 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-                dayThirtytwoGrid.Background = color;
+                dayThirtytwoGrid.Background = otherMonthColor;
             else
-                dayThirtytwoGrid.Background = defaultColor;
+                dayThirtytwoGrid.Background = currentMonthColor;
 
             dayThirtythreeDateTextBox.Text = firstDayOfMonth.AddDays(32 - i).Day.ToString();
 
             if (32 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-                dayThirtythreeGrid.Background = color;
+                dayThirtythreeGrid.Background = otherMonthColor;
             else
-                dayThirtythreeGrid.Background = defaultColor;
+                dayThirtythreeGrid.Background = currentMonthColor;
 
             dayThirtyfourDateTextBox.Text = firstDayOfMonth.AddDays(33 - i).Day.ToString();
 
             if (33 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-                dayThirtyfourGrid.Background = color;
+                dayThirtyfourGrid.Background = otherMonthColor;
             else
-                dayThirtyfourGrid.Background = defaultColor;
+                dayThirtyfourGrid.Background = currentMonthColor;
 
             dayThirtyfiveDateTextBox.Text = firstDayOfMonth.AddDays(34 - i).Day.ToString();
 
             if (34 - i >= DateTime.DaysInMonth(date.Year, date.Month))
-                dayThirtyfiveGrid.Background = color;
+                dayThirtyfiveGrid.Background = otherMonthColor;
             else
-                dayThirtyfiveGrid.Background = defaultColor;
+                dayThirtyfiveGrid.Background = currentMonthColor;
 
             if ((firstDayOfMonth.DayOfWeek == DayOfWeek.Sunday && DateTime.DaysInMonth(firstDayOfMonth.Year, firstDayOfMonth.Month) >= 30) || (firstDayOfMonth.DayOfWeek == DayOfWeek.Saturday && DateTime.DaysInMonth(firstDayOfMonth.Year, firstDayOfMonth.Month) >= 31))
             {
@@ -155,12 +162,18 @@ namespace Terminplaner.Pages
                     daySixDateTextBox.Text = firstDayOfMonth.AddDays(5).Day.ToString();
                     daySevenDateTextBox.Text = firstDayOfMonth.AddDays(6).Day.ToString();
 
-                    dayOneGrid.Background = defaultColor;
-                    dayTwoGrid.Background = defaultColor;
-                    dayThreeGrid.Background = defaultColor;
-                    dayFourGrid.Background = defaultColor;
-                    dayFiveGrid.Background = defaultColor;
-                    daySixGrid.Background = defaultColor;
+                    dayOneGrid.Background = currentMonthColor;
+                    dayTwoGrid.Background = currentMonthColor;
+                    dayThreeGrid.Background = currentMonthColor;
+                    dayFourGrid.Background = currentMonthColor;
+                    dayFiveGrid.Background = currentMonthColor;
+                    daySixGrid.Background = currentMonthColor;
+
+                    if (firstDayOfMonth.Month == DateTime.Now.Month)
+                        dayOneBorder.BorderBrush = todayBorderColor;
+                    else
+                        dayOneBorder.BorderBrush = defaultBorderColor;
+
                     break;
                 case DayOfWeek.Tuesday:
                     ret = 1;
@@ -173,12 +186,18 @@ namespace Terminplaner.Pages
                     daySixDateTextBox.Text = firstDayOfMonth.AddDays(4).Day.ToString();
                     daySevenDateTextBox.Text = firstDayOfMonth.AddDays(5).Day.ToString();
 
-                    dayOneGrid.Background = color;
-                    dayTwoGrid.Background = defaultColor;
-                    dayThreeGrid.Background = defaultColor;
-                    dayFourGrid.Background = defaultColor;
-                    dayFiveGrid.Background = defaultColor;
-                    daySixGrid.Background = defaultColor;
+                    dayOneGrid.Background = otherMonthColor;
+                    dayTwoGrid.Background = currentMonthColor;
+                    dayThreeGrid.Background = currentMonthColor;
+                    dayFourGrid.Background = currentMonthColor;
+                    dayFiveGrid.Background = currentMonthColor;
+                    daySixGrid.Background = currentMonthColor;
+
+                    if (firstDayOfMonth.Month == DateTime.Now.Month)
+                        dayTwoBorder.BorderBrush = todayBorderColor;
+                    else
+                        dayTwoBorder.BorderBrush = defaultBorderColor;
+
                     break;
                 case DayOfWeek.Wednesday:
                     ret = 2;
@@ -191,12 +210,18 @@ namespace Terminplaner.Pages
                     daySixDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
                     daySevenDateTextBox.Text = firstDayOfMonth.AddDays(4).Day.ToString();
 
-                    dayOneGrid.Background = color;
-                    dayTwoGrid.Background = color;
-                    dayThreeGrid.Background = defaultColor;
-                    dayFourGrid.Background = defaultColor;
-                    dayFiveGrid.Background = defaultColor;
-                    daySixGrid.Background = defaultColor;
+                    dayOneGrid.Background = otherMonthColor;
+                    dayTwoGrid.Background = otherMonthColor;
+                    dayThreeGrid.Background = currentMonthColor;
+                    dayFourGrid.Background = currentMonthColor;
+                    dayFiveGrid.Background = currentMonthColor;
+                    daySixGrid.Background = currentMonthColor;
+
+                    if (firstDayOfMonth.Month == DateTime.Now.Month)
+                        dayThreeBorder.BorderBrush = todayBorderColor;
+                    else
+                        dayThreeBorder.BorderBrush = defaultBorderColor;
+
                     break;
                 case DayOfWeek.Thursday:
                     ret = 3;
@@ -209,12 +234,18 @@ namespace Terminplaner.Pages
                     daySixDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
                     daySevenDateTextBox.Text = firstDayOfMonth.AddDays(3).Day.ToString();
 
-                    dayOneGrid.Background = color;
-                    dayTwoGrid.Background = color;
-                    dayThreeGrid.Background = color;
-                    dayFourGrid.Background = defaultColor;
-                    dayFiveGrid.Background = defaultColor;
-                    daySixGrid.Background = defaultColor;
+                    dayOneGrid.Background = otherMonthColor;
+                    dayTwoGrid.Background = otherMonthColor;
+                    dayThreeGrid.Background = otherMonthColor;
+                    dayFourGrid.Background = currentMonthColor;
+                    dayFiveGrid.Background = currentMonthColor;
+                    daySixGrid.Background = currentMonthColor;
+
+                    if (firstDayOfMonth.Month == DateTime.Now.Month)
+                        dayFourBorder.BorderBrush = todayBorderColor;
+                    else
+                        dayFourBorder.BorderBrush = defaultBorderColor;
+
                     break;
                 case DayOfWeek.Friday:
                     ret = 4;
@@ -227,12 +258,18 @@ namespace Terminplaner.Pages
                     daySixDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
                     daySevenDateTextBox.Text = firstDayOfMonth.AddDays(2).Day.ToString();
 
-                    dayOneGrid.Background = color;
-                    dayTwoGrid.Background = color;
-                    dayThreeGrid.Background = color;
-                    dayFourGrid.Background = color;
-                    dayFiveGrid.Background = defaultColor;
-                    daySixGrid.Background = defaultColor;
+                    dayOneGrid.Background = otherMonthColor;
+                    dayTwoGrid.Background = otherMonthColor;
+                    dayThreeGrid.Background = otherMonthColor;
+                    dayFourGrid.Background = otherMonthColor;
+                    dayFiveGrid.Background = currentMonthColor;
+                    daySixGrid.Background = currentMonthColor;
+
+                    if (firstDayOfMonth.Month == DateTime.Now.Month)
+                        dayFiveBorder.BorderBrush = todayBorderColor;
+                    else
+                        dayFiveBorder.BorderBrush = defaultBorderColor;
+
                     break;
                 case DayOfWeek.Saturday:
                     ret = 5;
@@ -245,12 +282,18 @@ namespace Terminplaner.Pages
                     daySixDateTextBox.Text = firstDayOfMonth.Day.ToString();
                     daySevenDateTextBox.Text = firstDayOfMonth.AddDays(1).Day.ToString();
 
-                    dayOneGrid.Background = color;
-                    dayTwoGrid.Background = color;
-                    dayThreeGrid.Background = color;
-                    dayFourGrid.Background = color;
-                    dayFiveGrid.Background = color;
-                    daySixGrid.Background = defaultColor;
+                    dayOneGrid.Background = otherMonthColor;
+                    dayTwoGrid.Background = otherMonthColor;
+                    dayThreeGrid.Background = otherMonthColor;
+                    dayFourGrid.Background = otherMonthColor;
+                    dayFiveGrid.Background = otherMonthColor;
+                    daySixGrid.Background = currentMonthColor;
+
+                    if (firstDayOfMonth.Month == DateTime.Now.Month)
+                        daySixBorder.BorderBrush = todayBorderColor;
+                    else
+                        daySixBorder.BorderBrush = defaultBorderColor;
+
                     break;
                 case DayOfWeek.Sunday:
                     ret = 6;
@@ -263,12 +306,18 @@ namespace Terminplaner.Pages
                     daySixDateTextBox.Text = previousMonth.Day.ToString();
                     daySevenDateTextBox.Text = firstDayOfMonth.Day.ToString();
 
-                    dayOneGrid.Background = color;
-                    dayTwoGrid.Background = color;
-                    dayThreeGrid.Background = color;
-                    dayFourGrid.Background = color;
-                    dayFiveGrid.Background = color;
-                    daySixGrid.Background = color;
+                    dayOneGrid.Background = otherMonthColor;
+                    dayTwoGrid.Background = otherMonthColor;
+                    dayThreeGrid.Background = otherMonthColor;
+                    dayFourGrid.Background = otherMonthColor;
+                    dayFiveGrid.Background = otherMonthColor;
+                    daySixGrid.Background = otherMonthColor;
+
+                    if (firstDayOfMonth.Month == DateTime.Now.Month)
+                        daySevenBorder.BorderBrush = todayBorderColor;
+                    else
+                        daySevenBorder.BorderBrush = defaultBorderColor;
+
                     break;
                 default:
                     break;
@@ -353,6 +402,14 @@ namespace Terminplaner.Pages
 
             date = new DateTime(year, month, 1);
 
+            loadCurrentMonth();
+
+            return DateAndTime.MonthName(date.Month) + " " + date.Year;
+        }
+
+        public string showToday()
+        {
+            date = DateTime.Now;
             loadCurrentMonth();
 
             return DateAndTime.MonthName(date.Month) + " " + date.Year;

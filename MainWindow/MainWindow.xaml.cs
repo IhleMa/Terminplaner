@@ -91,5 +91,30 @@ namespace Terminplaner.MainWindow
                     break;
             }
         }
+
+        private void TodayButton_Click(object sender, RoutedEventArgs e)
+        {
+            switch (currentView)
+            {
+                case "Day":
+
+                    break;
+
+                case "Week":
+
+                    break;
+
+                case "Month":
+                    currentDateTextBox.Text = monthView.showToday();
+                    break;
+
+                case "Year":
+
+                    break;
+
+                default:
+                    break;
+            }
+        }
     }
 }
