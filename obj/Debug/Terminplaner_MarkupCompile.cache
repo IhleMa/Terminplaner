@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\
+C:\Users\Marvin\Documents\Projects\Terminplaner\obj\Debug\
 Terminplaner
 none
 false
 DEBUG;TRACE
-C:\Users\zengo\Documents\git\Terminplaner\MainWindow\App.xaml
-21643619624
+C:\Users\Marvin\Documents\Projects\Terminplaner\MainWindow\App.xaml
+3834354205
 
-7248412018
-2440393986
-MainWindow\MainWindow.xaml;Pages\MonthView.xaml;
+12385335175
+24-1498654349
+MainWindow\MainWindow.xaml;Pages\MonthView.xaml;Views\MainWindowView.xaml;
 
-False
+True
 
