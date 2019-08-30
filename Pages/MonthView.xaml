@@ -27,13 +27,13 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="mondayTextBlock" Text="Monday" Grid.Column="0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14"/>
-        <TextBox x:Name="tuesdayTextBlock" Text="Tuesday" Grid.Column="1" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14"/>
-        <TextBox x:Name="wednesdayTextBlock" Text="Wednesday" Grid.Column="2" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14"/>
-        <TextBox x:Name="thursdayTextBlock" Text="Thursday" Grid.Column="3" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14"/>
-        <TextBox x:Name="fridayTextBlock" Text="Friday" Grid.Column="4" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14"/>
-        <TextBox x:Name="saturdayTextBlock" Text="Saturday" Grid.Column="5" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14"/>
-        <TextBox x:Name="sundayTextBlock" Text="Sunday" Grid.Column="6" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14"/>
+        <TextBox x:Name="mondayTextBlock" Text="Monday" Grid.Column="0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tuesdayTextBlock" Text="Tuesday" Grid.Column="1" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="wednesdayTextBlock" Text="Wednesday" Grid.Column="2" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="thursdayTextBlock" Text="Thursday" Grid.Column="3" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="fridayTextBlock" Text="Friday" Grid.Column="4" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="saturdayTextBlock" Text="Saturday" Grid.Column="5" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="sundayTextBlock" Text="Sunday" Grid.Column="6" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextAlignment="Center" FontSize="14" VerticalContentAlignment="Center"/>
 
         <Grid x:Name="dayOneGrid" Grid.Row="1" Grid.Column="0" Background="White">
             <Grid.RowDefinitions>
@@ -54,8 +54,8 @@
                 <TextBox x:Name="weekOneTextBox" Grid.Column="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" IsReadOnly="True"  BorderBrush="Transparent" BorderThickness="0" TextAlignment="Right" Background="Transparent" />
             </Grid>
 
-            <TextBox Name="dayOneTextBoxTwo" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayOneTextBoxThree" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayOneTextBoxTwo" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayOneTextBoxThree" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
             <TextBox Name="dayOneTextBoxFour" Grid.Row="3" FontSize="12" FontFamily="Consolas"  IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"/>
             <TextBox Name="dayOneTextBoxFive" Grid.Row="4" FontSize="12" FontFamily="Consolas"  IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0" Background="Transparent"/>
             
@@ -71,11 +71,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Name="dayTwoDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayTwoTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayTwoTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayTwoTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayTwoTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTwoDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTwoTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTwoTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTwoTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTwoTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
 
             <Border Name="dayTwoBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="5"/>
         </Grid>
@@ -89,11 +89,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Name="dayThreeDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayThreeTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayThreeTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayThreeTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayThreeTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayThreeDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayThreeTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayThreeTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayThreeTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayThreeTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
 
             <Border Name="dayThreeBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="5"/>
         </Grid>
@@ -107,11 +107,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Name="dayFourDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayFourTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayFourTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayFourTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayFourTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFourDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFourTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFourTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFourTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFourTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
 
             <Border Name="dayFourBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="5"/>
         </Grid>
@@ -125,11 +125,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Name="dayFiveDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayFiveTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayFiveTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayFiveTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayFiveTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFiveDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFiveTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFiveTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFiveTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayFiveTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
 
             <Border Name="dayFiveBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="5"/>
         </Grid>
@@ -143,11 +143,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Name="daySixDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="daySixTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="daySixTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="daySixTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="daySixTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySixDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySixTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySixTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySixTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySixTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
 
             <Border Name="daySixBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="5"/>
         </Grid>
@@ -161,11 +161,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Name="daySevenDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="daySevenTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="daySevenTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="daySevenTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="daySevenTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySevenDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySevenTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySevenTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySevenTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="daySevenTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
 
             <Border Name="daySevenBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="5"/>
         </Grid>
@@ -189,10 +189,10 @@
                 <TextBox x:Name="weekTwoTextBox" Grid.Column="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" TextAlignment="Right" />
             </Grid>
 
-            <TextBox Name="dayEightTextBoxTwo" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayEightTextBoxThree" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayEightTextBoxFour" Grid.Row="3" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayEightTextBoxFive" Grid.Row="4" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayEightTextBoxTwo" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayEightTextBoxThree" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayEightTextBoxFour" Grid.Row="3" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayEightTextBoxFive" Grid.Row="4" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
 
             <Border Name="dayEightBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="5"/>
         </Grid>
@@ -206,11 +206,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Name="dayNineDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayNineTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayNineTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayNineTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayNineTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayNineDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayNineTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayNineTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayNineTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayNineTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
 
             <Border Name="dayNineBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="5"/>
         </Grid>
@@ -224,11 +224,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Name="dayTenDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayTenTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayTenTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayTenTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayTenTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTenDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTenTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTenTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTenTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayTenTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
 
             <Border Name="dayTenBorder" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="5"/>
         </Grid>
@@ -242,8 +242,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Name="dayElevenDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
-            <TextBox Name="dayElevenTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayElevenDateTextBox" Grid.Row="0" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
+            <TextBox Name="dayElevenTextBoxOne" Grid.Row="1" FontSize="12" FontFamily="Consolas" FontWeight="Bold" Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
             <TextBox Name="dayElevenTextBoxTwo" Grid.Row="2" FontSize="12" FontFamily="Consolas"  Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
             <TextBox Name="dayElevenTextBoxThree" Grid.Row="3" FontSize="12" FontFamily="Consolas"  Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>
             <TextBox Name="dayElevenTextBoxFour" Grid.Row="4" FontSize="12" FontFamily="Consolas"  Background="Transparent" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="Transparent" BorderThickness="0"/>

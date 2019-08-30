@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -15,7 +16,7 @@ namespace Terminplaner.Pages
         DateTime firstDayOfMonth;
         Brush currentMonthColor = Brushes.White;
         Brush otherMonthColor = Brushes.Gray;
-        Brush todayBorderColor = Brushes.AliceBlue;
+        Brush todayBorderColor = Brushes.CadetBlue;
         Brush defaultBorderColor = Brushes.Black;
 
         public MonthView(DateTime _now)
@@ -31,14 +32,9 @@ namespace Terminplaner.Pages
             loadCurrentMonth();
         }
 
-        private void markToday()
-        {
-            
-        }
-
         public void loadCurrentMonth()
         {
-            int i;
+            int firstDayOfMonthValue;
 
             if (date.Month == 1)
             {
@@ -52,75 +48,75 @@ namespace Terminplaner.Pages
             firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
 
             loadCW();
-            i = loadFirstWeek();
+            firstDayOfMonthValue = loadFirstWeek();
 
-            dayEightDateTextBox.Text = firstDayOfMonth.AddDays(7 - i).Day.ToString();
-            dayNineDateTextBox.Text = firstDayOfMonth.AddDays(8 - i).Day.ToString();
-            dayTenDateTextBox.Text = firstDayOfMonth.AddDays(9 - i).Day.ToString();
-            dayElevenDateTextBox.Text = firstDayOfMonth.AddDays(10 - i).Day.ToString();
-            dayTwelveDateTextBox.Text = firstDayOfMonth.AddDays(11 - i).Day.ToString();
-            dayThirteenDateTextBox.Text = firstDayOfMonth.AddDays(12 - i).Day.ToString();
-            dayFourteenDateTextBox.Text = firstDayOfMonth.AddDays(13 - i).Day.ToString();
-            dayFifteenDateTextBox.Text = firstDayOfMonth.AddDays(14 - i).Day.ToString();
-            daySixteenDateTextBox.Text = firstDayOfMonth.AddDays(15 - i).Day.ToString();
-            daySeventeenDateTextBox.Text = firstDayOfMonth.AddDays(16 - i).Day.ToString();
-            dayEighteenDateTextBox.Text = firstDayOfMonth.AddDays(17 - i).Day.ToString();
-            dayNineteenDateTextBox.Text = firstDayOfMonth.AddDays(18 - i).Day.ToString();
-            dayTwentyDateTextBox.Text = firstDayOfMonth.AddDays(19 - i).Day.ToString();
-            dayTwentyoneDateTextBox.Text = firstDayOfMonth.AddDays(20 - i).Day.ToString();
-            dayTwentytwoDateTextBox.Text = firstDayOfMonth.AddDays(21 - i).Day.ToString();
-            dayTwentythreeDateTextBox.Text = firstDayOfMonth.AddDays(22 - i).Day.ToString();
-            dayTwentyfourDateTextBox.Text = firstDayOfMonth.AddDays(23 - i).Day.ToString();
-            dayTwentyfiveDateTextBox.Text = firstDayOfMonth.AddDays(24 - i).Day.ToString();
-            dayTwentysixDateTextBox.Text = firstDayOfMonth.AddDays(25 - i).Day.ToString();
-            dayTwentysevenDateTextBox.Text = firstDayOfMonth.AddDays(26 - i).Day.ToString();
-            dayTwentyeightDateTextBox.Text = firstDayOfMonth.AddDays(27 - i).Day.ToString();
+            dayEightDateTextBox.Text = firstDayOfMonth.AddDays(7 - firstDayOfMonthValue).Day.ToString();
+            dayNineDateTextBox.Text = firstDayOfMonth.AddDays(8 - firstDayOfMonthValue).Day.ToString();
+            dayTenDateTextBox.Text = firstDayOfMonth.AddDays(9 - firstDayOfMonthValue).Day.ToString();
+            dayElevenDateTextBox.Text = firstDayOfMonth.AddDays(10 - firstDayOfMonthValue).Day.ToString();
+            dayTwelveDateTextBox.Text = firstDayOfMonth.AddDays(11 - firstDayOfMonthValue).Day.ToString();
+            dayThirteenDateTextBox.Text = firstDayOfMonth.AddDays(12 - firstDayOfMonthValue).Day.ToString();
+            dayFourteenDateTextBox.Text = firstDayOfMonth.AddDays(13 - firstDayOfMonthValue).Day.ToString();
+            dayFifteenDateTextBox.Text = firstDayOfMonth.AddDays(14 - firstDayOfMonthValue).Day.ToString();
+            daySixteenDateTextBox.Text = firstDayOfMonth.AddDays(15 - firstDayOfMonthValue).Day.ToString();
+            daySeventeenDateTextBox.Text = firstDayOfMonth.AddDays(16 - firstDayOfMonthValue).Day.ToString();
+            dayEighteenDateTextBox.Text = firstDayOfMonth.AddDays(17 - firstDayOfMonthValue).Day.ToString();
+            dayNineteenDateTextBox.Text = firstDayOfMonth.AddDays(18 - firstDayOfMonthValue).Day.ToString();
+            dayTwentyDateTextBox.Text = firstDayOfMonth.AddDays(19 - firstDayOfMonthValue).Day.ToString();
+            dayTwentyoneDateTextBox.Text = firstDayOfMonth.AddDays(20 - firstDayOfMonthValue).Day.ToString();
+            dayTwentytwoDateTextBox.Text = firstDayOfMonth.AddDays(21 - firstDayOfMonthValue).Day.ToString();
+            dayTwentythreeDateTextBox.Text = firstDayOfMonth.AddDays(22 - firstDayOfMonthValue).Day.ToString();
+            dayTwentyfourDateTextBox.Text = firstDayOfMonth.AddDays(23 - firstDayOfMonthValue).Day.ToString();
+            dayTwentyfiveDateTextBox.Text = firstDayOfMonth.AddDays(24 - firstDayOfMonthValue).Day.ToString();
+            dayTwentysixDateTextBox.Text = firstDayOfMonth.AddDays(25 - firstDayOfMonthValue).Day.ToString();
+            dayTwentysevenDateTextBox.Text = firstDayOfMonth.AddDays(26 - firstDayOfMonthValue).Day.ToString();
+            dayTwentyeightDateTextBox.Text = firstDayOfMonth.AddDays(27 - firstDayOfMonthValue).Day.ToString();
 
-            dayTwentynineDateTextBox.Text = firstDayOfMonth.AddDays(28 - i).Day.ToString();
+            dayTwentynineDateTextBox.Text = firstDayOfMonth.AddDays(28 - firstDayOfMonthValue).Day.ToString();
 
-            if (28 - i >= DateTime.DaysInMonth(date.Year, date.Month))
+            if (28 - firstDayOfMonthValue >= DateTime.DaysInMonth(date.Year, date.Month))
                 dayTwentynineGrid.Background = otherMonthColor;
             else
                 dayTwentynineGrid.Background = currentMonthColor;
 
-            dayThirtyDateTextBox.Text = firstDayOfMonth.AddDays(29 - i).Day.ToString();
+            dayThirtyDateTextBox.Text = firstDayOfMonth.AddDays(29 - firstDayOfMonthValue).Day.ToString();
 
-            if (29 - i >= DateTime.DaysInMonth(date.Year, date.Month))
+            if (29 - firstDayOfMonthValue >= DateTime.DaysInMonth(date.Year, date.Month))
                 dayThirtyGrid.Background = otherMonthColor;
             else
                 dayThirtyGrid.Background = currentMonthColor;
 
-            dayThirtyoneDateTextBox.Text = firstDayOfMonth.AddDays(30 - i).Day.ToString();
+            dayThirtyoneDateTextBox.Text = firstDayOfMonth.AddDays(30 - firstDayOfMonthValue).Day.ToString();
 
-            if (30 - i >= DateTime.DaysInMonth(date.Year, date.Month))
+            if (30 - firstDayOfMonthValue >= DateTime.DaysInMonth(date.Year, date.Month))
                 dayThirtyoneGrid.Background = otherMonthColor;
             else
                 dayThirtyoneGrid.Background = currentMonthColor;
 
-            dayThirtytwoDateTextBox.Text = firstDayOfMonth.AddDays(31 - i).Day.ToString();
+            dayThirtytwoDateTextBox.Text = firstDayOfMonth.AddDays(31 - firstDayOfMonthValue).Day.ToString();
 
-            if (31 - i >= DateTime.DaysInMonth(date.Year, date.Month))
+            if (31 - firstDayOfMonthValue >= DateTime.DaysInMonth(date.Year, date.Month))
                 dayThirtytwoGrid.Background = otherMonthColor;
             else
                 dayThirtytwoGrid.Background = currentMonthColor;
 
-            dayThirtythreeDateTextBox.Text = firstDayOfMonth.AddDays(32 - i).Day.ToString();
+            dayThirtythreeDateTextBox.Text = firstDayOfMonth.AddDays(32 - firstDayOfMonthValue).Day.ToString();
 
-            if (32 - i >= DateTime.DaysInMonth(date.Year, date.Month))
+            if (32 - firstDayOfMonthValue >= DateTime.DaysInMonth(date.Year, date.Month))
                 dayThirtythreeGrid.Background = otherMonthColor;
             else
                 dayThirtythreeGrid.Background = currentMonthColor;
 
-            dayThirtyfourDateTextBox.Text = firstDayOfMonth.AddDays(33 - i).Day.ToString();
+            dayThirtyfourDateTextBox.Text = firstDayOfMonth.AddDays(33 - firstDayOfMonthValue).Day.ToString();
 
-            if (33 - i >= DateTime.DaysInMonth(date.Year, date.Month))
+            if (33 - firstDayOfMonthValue >= DateTime.DaysInMonth(date.Year, date.Month))
                 dayThirtyfourGrid.Background = otherMonthColor;
             else
                 dayThirtyfourGrid.Background = currentMonthColor;
 
-            dayThirtyfiveDateTextBox.Text = firstDayOfMonth.AddDays(34 - i).Day.ToString();
+            dayThirtyfiveDateTextBox.Text = firstDayOfMonth.AddDays(34 - firstDayOfMonthValue).Day.ToString();
 
-            if (34 - i >= DateTime.DaysInMonth(date.Year, date.Month))
+            if (34 - firstDayOfMonthValue >= DateTime.DaysInMonth(date.Year, date.Month))
                 dayThirtyfiveGrid.Background = otherMonthColor;
             else
                 dayThirtyfiveGrid.Background = currentMonthColor;
@@ -134,6 +130,9 @@ namespace Terminplaner.Pages
             {
                 dayThirtyDateTextBox.Text += "/31";
             }
+
+            markToday(firstDayOfMonth.Month == DateTime.Now.Month);
+           
         }
 
         private void loadCW()
@@ -169,11 +168,6 @@ namespace Terminplaner.Pages
                     dayFiveGrid.Background = currentMonthColor;
                     daySixGrid.Background = currentMonthColor;
 
-                    if (firstDayOfMonth.Month == DateTime.Now.Month)
-                        dayOneBorder.BorderBrush = todayBorderColor;
-                    else
-                        dayOneBorder.BorderBrush = defaultBorderColor;
-
                     break;
                 case DayOfWeek.Tuesday:
                     ret = 1;
@@ -192,12 +186,6 @@ namespace Terminplaner.Pages
                     dayFourGrid.Background = currentMonthColor;
                     dayFiveGrid.Background = currentMonthColor;
                     daySixGrid.Background = currentMonthColor;
-
-                    if (firstDayOfMonth.Month == DateTime.Now.Month)
-                        dayTwoBorder.BorderBrush = todayBorderColor;
-                    else
-                        dayTwoBorder.BorderBrush = defaultBorderColor;
-
                     break;
                 case DayOfWeek.Wednesday:
                     ret = 2;
@@ -216,12 +204,6 @@ namespace Terminplaner.Pages
                     dayFourGrid.Background = currentMonthColor;
                     dayFiveGrid.Background = currentMonthColor;
                     daySixGrid.Background = currentMonthColor;
-
-                    if (firstDayOfMonth.Month == DateTime.Now.Month)
-                        dayThreeBorder.BorderBrush = todayBorderColor;
-                    else
-                        dayThreeBorder.BorderBrush = defaultBorderColor;
-
                     break;
                 case DayOfWeek.Thursday:
                     ret = 3;
@@ -240,12 +222,6 @@ namespace Terminplaner.Pages
                     dayFourGrid.Background = currentMonthColor;
                     dayFiveGrid.Background = currentMonthColor;
                     daySixGrid.Background = currentMonthColor;
-
-                    if (firstDayOfMonth.Month == DateTime.Now.Month)
-                        dayFourBorder.BorderBrush = todayBorderColor;
-                    else
-                        dayFourBorder.BorderBrush = defaultBorderColor;
-
                     break;
                 case DayOfWeek.Friday:
                     ret = 4;
@@ -264,12 +240,6 @@ namespace Terminplaner.Pages
                     dayFourGrid.Background = otherMonthColor;
                     dayFiveGrid.Background = currentMonthColor;
                     daySixGrid.Background = currentMonthColor;
-
-                    if (firstDayOfMonth.Month == DateTime.Now.Month)
-                        dayFiveBorder.BorderBrush = todayBorderColor;
-                    else
-                        dayFiveBorder.BorderBrush = defaultBorderColor;
-
                     break;
                 case DayOfWeek.Saturday:
                     ret = 5;
@@ -288,12 +258,6 @@ namespace Terminplaner.Pages
                     dayFourGrid.Background = otherMonthColor;
                     dayFiveGrid.Background = otherMonthColor;
                     daySixGrid.Background = currentMonthColor;
-
-                    if (firstDayOfMonth.Month == DateTime.Now.Month)
-                        daySixBorder.BorderBrush = todayBorderColor;
-                    else
-                        daySixBorder.BorderBrush = defaultBorderColor;
-
                     break;
                 case DayOfWeek.Sunday:
                     ret = 6;
@@ -312,12 +276,6 @@ namespace Terminplaner.Pages
                     dayFourGrid.Background = otherMonthColor;
                     dayFiveGrid.Background = otherMonthColor;
                     daySixGrid.Background = otherMonthColor;
-
-                    if (firstDayOfMonth.Month == DateTime.Now.Month)
-                        daySevenBorder.BorderBrush = todayBorderColor;
-                    else
-                        daySevenBorder.BorderBrush = defaultBorderColor;
-
                     break;
                 default:
                     break;
@@ -361,6 +319,200 @@ namespace Terminplaner.Pages
             }
 
             return (isoYear * 100) + ((_dt - week1).Days / 7 + 1);
+        }
+
+        private void markToday(bool _isCurrentMonth)
+        {
+            Brush brush;
+            Thickness borderThickness;
+
+            if (_isCurrentMonth)
+            {
+                brush = todayBorderColor;
+                borderThickness = new Thickness(2.5);
+            }
+            else
+            {
+                brush = defaultBorderColor;
+                borderThickness = new Thickness(1);
+            }
+
+            switch (DateTime.Now.Day + getFirstDayOfCurrentMonth())
+            {
+                case 1:
+                    dayOneBorder.BorderBrush = brush;
+                    dayOneBorder.BorderThickness = borderThickness;
+                    break;
+                case 2:
+                    dayTwoBorder.BorderBrush = brush;
+                    dayTwoBorder.BorderThickness = borderThickness;
+                    break;
+                case 3:
+                    dayThreeBorder.BorderBrush = brush;
+                    dayThreeBorder.BorderThickness = borderThickness;
+                    break;
+                case 4:
+                    dayFourBorder.BorderBrush = brush;
+                    dayFourBorder.BorderThickness = borderThickness;
+                    break;
+                case 5:
+                    dayFiveBorder.BorderBrush = brush;
+                    dayFiveBorder.BorderThickness = borderThickness;
+                    break;
+                case 6:
+                    daySixBorder.BorderBrush = brush;
+                    daySixBorder.BorderThickness = borderThickness;
+                    break;
+                case 7:
+                    daySevenBorder.BorderBrush = brush;
+                    daySevenBorder.BorderThickness = borderThickness;
+                    break;
+                case 8:
+                    dayEightBorder.BorderBrush = brush;
+                    dayEightBorder.BorderThickness = borderThickness;
+                    break;
+                case 9:
+                    dayNineBorder.BorderBrush = brush;
+                    dayNineBorder.BorderThickness = borderThickness;
+                    break;
+                case 10:
+                    dayTenBorder.BorderBrush = brush;
+                    dayTenBorder.BorderThickness = borderThickness;
+                    break;
+                case 11:
+                    dayElevenBorder.BorderBrush = brush;
+                    dayElevenBorder.BorderThickness = borderThickness;
+                    break;
+                case 12:
+                    dayTwelveBorder.BorderBrush = brush;
+                    dayTwelveBorder.BorderThickness = borderThickness;
+                    break;
+                case 13:
+                    dayThirteenBorder.BorderBrush = brush;
+                    dayThirteenBorder.BorderThickness = borderThickness;
+                    break;
+                case 14:
+                    dayFourteenBorder.BorderBrush = brush;
+                    dayFourteenBorder.BorderThickness = borderThickness;
+                    break;
+                case 15:
+                    dayFifteenBorder.BorderBrush = brush;
+                    dayFifteenBorder.BorderThickness = borderThickness;
+                    break;
+                case 16:
+                    daySixteenBorder.BorderBrush = brush;
+                    daySixteenBorder.BorderThickness = borderThickness;
+                    break;
+                case 17:
+                    daySeventeenBorder.BorderBrush = brush;
+                    daySeventeenBorder.BorderThickness = borderThickness;
+                    break;
+                case 18:
+                    dayEighteenBorder.BorderBrush = brush;
+                    dayEighteenBorder.BorderThickness = borderThickness;
+                    break;
+                case 19:
+                    dayNineteenBorder.BorderBrush = brush;
+                    dayNineteenBorder.BorderThickness = borderThickness;
+                    break;
+                case 20:
+                    dayTwentyBorder.BorderBrush = brush;
+                    dayTwentyBorder.BorderThickness = borderThickness;
+                    break;
+                case 21:
+                    dayTwentyoneBorder.BorderBrush = brush;
+                    dayTwentyoneBorder.BorderThickness = borderThickness;
+                    break;
+                case 22:
+                    dayTwentytwoBorder.BorderBrush = brush;
+                    dayTwentytwoBorder.BorderThickness = borderThickness;
+                    break;
+                case 23:
+                    dayTwentythreeBorder.BorderBrush = brush;
+                    dayTwentythreeBorder.BorderThickness = borderThickness;
+                    break;
+                case 24:
+                    dayTwentyfourBorder.BorderBrush = brush;
+                    dayTwentyfourBorder.BorderThickness = borderThickness;
+                    break;
+                case 25:
+                    dayTwentyfiveBorder.BorderBrush = brush;
+                    dayTwentyfiveBorder.BorderThickness = borderThickness;
+                    break;
+                case 26:
+                    dayTwentysixBorder.BorderBrush = brush;
+                    dayTwentysixBorder.BorderThickness = borderThickness;
+                    break;
+                case 27:
+                    dayTwentysevenBorder.BorderBrush = brush;
+                    dayTwentysevenBorder.BorderThickness = borderThickness;
+                    break;
+                case 28:
+                    dayTwentyeightBorder.BorderBrush = brush;
+                    dayTwentyeightBorder.BorderThickness = borderThickness;
+                    break;
+                case 29:
+                    dayTwentynineBorder.BorderBrush = brush;
+                    dayTwentynineBorder.BorderThickness = borderThickness;
+                    break;
+                case 30:
+                    dayThirtyBorder.BorderBrush = brush;
+                    dayThirtyBorder.BorderThickness = borderThickness;
+                    break;
+                case 31:
+                    dayThirtyoneBorder.BorderBrush = brush;
+                    dayThirtyoneBorder.BorderThickness = borderThickness;
+                    break;
+                case 32:
+                    dayThirtytwoBorder.BorderBrush = brush;
+                    dayThirtytwoBorder.BorderThickness = borderThickness;
+                    break;
+                case 33:
+                    dayThirtythreeBorder.BorderBrush = brush;
+                    dayThirtythreeBorder.BorderThickness = borderThickness;
+                    break;
+                case 34:
+                    dayThirtyfourBorder.BorderBrush = brush;
+                    dayThirtyfourBorder.BorderThickness = borderThickness;
+                    break;
+                case 35:
+                    dayThirtyfiveBorder.BorderBrush = brush;
+                    dayThirtyfiveBorder.BorderThickness = borderThickness;
+                    break;
+                case 36:
+                    dayThirtyfourBorder.BorderBrush = brush;
+                    dayThirtyfourBorder.BorderThickness = borderThickness;
+                    break;
+                case 37:
+                    dayThirtyfiveBorder.BorderBrush = brush;
+                    dayThirtyfiveBorder.BorderThickness = borderThickness;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private int getFirstDayOfCurrentMonth()
+        {
+            switch (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).DayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    return 0;
+                case DayOfWeek.Tuesday:
+                    return 1;
+                case DayOfWeek.Wednesday:
+                    return 2;
+                case DayOfWeek.Thursday:
+                    return 3;
+                case DayOfWeek.Friday:
+                    return 4;
+                case DayOfWeek.Saturday:
+                    return 5;
+                case DayOfWeek.Sunday:
+                    return 6;
+                default:
+                    return -1;
+            }
         }
 
         public string showPreviousMonth()
