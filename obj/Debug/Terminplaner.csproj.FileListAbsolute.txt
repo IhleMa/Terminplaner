@@ -66,3 +66,14 @@ C:\Users\Marvin\Documents\Projects\Terminplaner\obj\Debug\Terminplaner.csproj.Co
 C:\Users\Marvin\Documents\Projects\Terminplaner\obj\Debug\Views\MainWindowView.g.cs
 C:\Users\Marvin\Documents\Projects\Terminplaner\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Marvin\Documents\Projects\Terminplaner\obj\Debug\Views\MainWindowView.baml
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\New Appointment\NewAppointmentWindow.g.cs
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Views\MainWindowView.g.cs
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\New Appointment\NewAppointmentWindow.baml
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Views\MainWindowView.baml
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Pages\Appointments.g.cs
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Pages\Appointments.baml
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Pages\AppointmentListView.g.cs
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Pages\AppointmentListView.baml
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Appointment\AppointmentWindow.baml
+C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Appointment\AppointmentWindow.g.cs

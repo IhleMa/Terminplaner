@@ -1,0 +1,83 @@
+﻿<Window x:Class="Terminplaner.Appointment.AppointmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Name="appointmentWindow"
+        Title="New Appointment" 
+        MinWidth="450" MinHeight="300" 
+        Width="450" Height="300"
+        WindowStartupLocation="CenterOwner">
+    <Grid Name="layoutGrid" Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Name="detailsGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.7*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Name="descriptionTextBlock" Text="Description:" FontFamily="Consolas" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <TextBox Name="descriptionTextBox" Text="" Grid.Row="0" Grid.Column="1" FontFamily="Consolas" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,15"/>
+
+            <TextBlock Name="appointmentFromDatePickerTextBlock" Text="From Date:" FontFamily="Consolas" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <DatePicker Name="appointmentFromDatePicker" Grid.Row="1" Grid.Column="1" FontFamily="Consolas" Margin="0,0,0,15"/>
+
+            <TextBlock Name="appointmentToDatePickerTextBlock" Text="To Date:" FontFamily="Consolas" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <DatePicker Name="appointmentToDatePicker" Grid.Row="2" Grid.Column="1" FontFamily="Consolas" Margin="0,0,0,15"/>
+
+            <TextBlock Name="appointmentTypeTextBlock" Text="Type:" Grid.Row="3" FontFamily="Consolas" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <ComboBox Name="appointmentTypeComboBox" Grid.Row="3" Grid.Column="1" FontFamily="Consolas" Margin="0,0,0,15">
+                <ComboBoxItem Name="appointment" Content="Appointment"/>
+                <ComboBoxItem Name="business" Content="Business"/>
+                <ComboBoxItem Name="school" Content="School"/>
+                <ComboBoxItem Name="leisure" Content="Leisure"/>
+            </ComboBox>
+
+            <TextBlock Name="appointmentPriorityTextBlock" Text="Priority:" Grid.Row="4" FontFamily="Consolas" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <ComboBox Name="appointmentPriorityComboBox" Grid.Row="4" Grid.Column="1" FontFamily="Consolas" Margin="0,0,0,15">
+                <ComboBoxItem Name="low" Content="Low"/>
+                <ComboBoxItem Name="middle" Content="Middle"/>
+                <ComboBoxItem Name="high" Content="High"/>
+                <ComboBoxItem Name="veryHigh" Content="Very High"/>
+            </ComboBox>
+
+            <TextBlock Name="appointmentStatusTextBlock" Text="Status:" Grid.Row="5" FontFamily="Consolas" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <ComboBox Name="appointmentStatusComboBox" Grid.Row="5" Grid.Column="1" FontFamily="Consolas" Margin="0,0,0,15">
+                <ComboBoxItem Name="planned" Content="Planned"/>
+                <ComboBoxItem Name="inProgress" Content="In progress"/>
+                <ComboBoxItem Name="completed" Content="Completed"/>
+                <ComboBoxItem Name="cancelled" Content="Cancelled"/>
+                <ComboBoxItem Name="failed" Content="Failed"/>
+                <ComboBoxItem Name="postponed" Content="Postponed"/>
+            </ComboBox>
+        </Grid>
+
+        <Grid Name="buttonGrid" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.6*"/>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="cancelButton" Content="Cancel" Grid.Column="1" Margin="0,0,5,0" Click="CancelButton_Click"/>
+            <Button Name="createButton" Content="Create" Grid.Column="2" Margin="5,0,0,0" Click="CreateButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -7,7 +7,7 @@
         WindowState="Normal"
         WindowStyle="ThreeDBorderWindow"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" MinHeight="600" MinWidth="800" Height="600" Width="800"  Name="mainWindow">
+        Title="Terminplaner" MinHeight="600" MinWidth="800" Height="600" Width="800"  Name="mainWindow">
     
     <Grid Name="layoutGrid" Margin="10, 10, 10, 10">
         <Grid.RowDefinitions>
@@ -27,7 +27,7 @@
                 <ColumnDefinition Width="0.4*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Name="newAppointmentButton" Content="New Appointment" Margin="2"/>
+            <Button Name="newAppointmentButton" Content="New Appointment" Margin="2" Click="NewAppointmentButton_Click"/>
 
             <Grid Name="navigationDateGrid" Grid.Row="0" Grid.Column="1" Margin="8,0,0,0">
                 <Grid.ColumnDefinitions>
@@ -53,20 +53,25 @@
                 <Button Name="todayButton" Content="Today" Grid.Column="0" Margin="0,2,8,2" Click="TodayButton_Click"/>
                 <Button Name="dayViewButton" Content="Day" Grid.Column="1" Margin="0,2,0,2"/>
                 <Button Name="weekViewButton" Content="Week" Grid.Column="2" Margin="0,2,0,2"/>
-                <Button Name="monthViewButton" Content="Month" Grid.Column="3" Margin="0,2,0,2"/>
+                <Button Name="monthViewButton" Content="Month" Grid.Column="3" Margin="0,2,0,2" Click="MonthViewButton_Click"/>
                 <Button Name="yearViewButton" Content="Year" Grid.Column="4" Margin="0,2,0,2"/>
             </Grid>
         </Grid>
 
-        <Grid Name="filterGrid" Grid.Row="1" Background="AliceBlue" >
+        <Grid Name="filterGrid" Grid.Row="1" Background="AliceBlue">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.1*"/>
-                <RowDefinition Height="0.4*"/>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.24*"/>
+                <RowDefinition Height="0.65*"/>
+                <RowDefinition Height="0.05*"/>
             </Grid.RowDefinitions>
+
+            <Viewbox>
+                <Calendar Name="calendar" SelectionMode="SingleDate" SelectedDatesChanged="Calendar_SelectedDatesChanged"/>
+            </Viewbox>
+
+            <Button Name="Appointments" Content="Appointments" Grid.Row="2" Click="Appointments_Click"/>
         </Grid>
 
-        <Frame Name="Main" Grid.Row="1" Grid.Column="1" />
+        <Frame Name="Main" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

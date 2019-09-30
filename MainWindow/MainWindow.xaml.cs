@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Windows;
-using Terminplaner.Classes;
+using Terminplaner.Appointment;
 using Terminplaner.Pages;
 
 namespace Terminplaner.MainWindow
@@ -15,6 +15,7 @@ namespace Terminplaner.MainWindow
         string currentView;
 
         MonthView monthView = new MonthView(now);
+        AppointmentListView appointmentListView = new AppointmentListView();
 
         public MainWindow()
         {
@@ -115,6 +116,50 @@ namespace Terminplaner.MainWindow
                 default:
                     break;
             }
+        }
+
+        private void NewAppointmentButton_Click(object sender, RoutedEventArgs e)
+        {
+            AppointmentWindow AppointmentWindow = new AppointmentWindow();
+            AppointmentWindow.Owner = mainWindow;
+            AppointmentWindow.Show();
+        }
+
+        private void Calendar_SelectedDatesChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            switch (currentView)
+            {
+                case "Day":
+
+                    break;
+
+                case "Week":
+
+                    break;
+
+                case "Month":
+                    currentDateTextBox.Text = monthView.changeDate(calendar.SelectedDate.Value);
+                    break;
+
+                case "Year":
+
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void Appointments_Click(object sender, RoutedEventArgs e)
+        {
+            currentView = "Appointments";
+            Main.Content = appointmentListView;
+        }
+
+        private void MonthViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            currentView = "Month";
+            Main.Content = monthView;
         }
     }
 }

@@ -85,6 +85,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Appointment\AppointmentWindow.xaml.cs">
+      <DependentUpon>AppointmentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppointmentListView.xaml.cs">
+      <DependentUpon>AppointmentListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -104,6 +110,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Appointment\AppointmentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppointmentListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MonthView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

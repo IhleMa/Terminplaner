@@ -480,12 +480,12 @@ namespace Terminplaner.Pages
                     dayThirtyfiveBorder.BorderThickness = borderThickness;
                     break;
                 case 36:
-                    dayThirtyfourBorder.BorderBrush = brush;
-                    dayThirtyfourBorder.BorderThickness = borderThickness;
+                    dayTwentynineBorder.BorderBrush = brush;
+                    dayTwentynineBorder.BorderThickness = borderThickness;
                     break;
                 case 37:
-                    dayThirtyfiveBorder.BorderBrush = brush;
-                    dayThirtyfiveBorder.BorderThickness = borderThickness;
+                    dayThirtyBorder.BorderBrush = brush;
+                    dayThirtyBorder.BorderThickness = borderThickness;
                     break;
                 default:
                     break;
@@ -562,6 +562,15 @@ namespace Terminplaner.Pages
         public string showToday()
         {
             date = DateTime.Now;
+            loadCurrentMonth();
+
+            return DateAndTime.MonthName(date.Month) + " " + date.Year;
+        }
+
+        public string changeDate(DateTime _date)
+        {
+            date = _date;
+
             loadCurrentMonth();
 
             return DateAndTime.MonthName(date.Month) + " " + date.Year;
