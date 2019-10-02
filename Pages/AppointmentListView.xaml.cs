@@ -1,6 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
+using Terminplaner.Classes;
 
 namespace Terminplaner.Pages
 {
@@ -17,28 +20,32 @@ namespace Terminplaner.Pages
 
         public void init()
         {
-            List<Appointment> appointments = new List<Appointment>();
-
-            //Schleife benötigt die alle Termine abgreift und hinzufügt (for each)
-
-            appointments.Add(new Appointment() { Description = "Test", FromDate = DateTime.Now, ToDate = DateTime.Now, Type = 0, Priority = 0, Status = 0 }); //platzhalter
-
-            appointmentList.ItemsSource = appointments;
+            ConnectionClass connection = new ConnectionClass();
+            appointmentList.ItemsSource = connection.GetAppointments();
         }
     }
 
     public class Appointment
     {
-        public string Description { get; set; }
+        public string Title { get; set; }
 
         public DateTime FromDate { get; set; }
 
         public DateTime ToDate { get; set; }
 
-        public int Type { get; set; }
+        public string Category { get; set; }
 
         public int Priority { get; set; }
 
-        public int Status { get; set; }
+        public int State { get; set; }
+
+
+        public string GetFromDateAsString {
+            get { return FromDate.ToString("dd.MM.yyyy"); }
+        }
+        public string GetToDateAsString {
+            get { return ToDate.ToString("dd.MM.yyyy"); }
+        }
+
     }
 }

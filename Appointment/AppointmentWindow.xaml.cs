@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using Terminplaner.Classes;
 
 namespace Terminplaner.Appointment
 {
@@ -27,7 +28,25 @@ namespace Terminplaner.Appointment
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
+            CreateNewEntry();
+            Close();
+        }
 
+        void CreateNewEntry()
+        {
+
+            Pages.Appointment appointment = new Pages.Appointment();
+
+            appointment.Title = titleTextBox.Text;
+            appointment.Category = appointmentCategoryComboBox.SelectedValue.ToString();
+            appointment.FromDate = (DateTime)appointmentFromDatePicker.SelectedDate;
+            appointment.ToDate = (DateTime)appointmentToDatePicker.SelectedDate;
+            appointment.Priority = (int)appointmentPriorityComboBox.SelectedIndex;
+            appointment.State = (int)appointmentStatusComboBox.SelectedIndex;
+
+
+            ConnectionClass connection = new ConnectionClass();
+            connection.InsertAppointment(appointment);
         }
     }
 }

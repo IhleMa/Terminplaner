@@ -12,12 +12,12 @@
         <ListView Name="appointmentList" Margin="10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn x:Name="descriptionColumn" Header="Description" Width="250"/>
-                    <GridViewColumn x:Name="fromDateColumn" Header="From Date" Width="75"/>
-                    <GridViewColumn x:Name="toDateColumn" Header="To Date" Width="75"/>
-                    <GridViewColumn x:Name="typeColumn" Header="Type" Width="120"/>
-                    <GridViewColumn x:Name="priorityColumn" Header="Priority" Width="120"/>
-                    <GridViewColumn x:Name="statusColumn" Header="Status" Width="120"/>
+                    <GridViewColumn x:Name="titleColumn" DisplayMemberBinding="{ Binding Title}" Header="Title" Width="200"/>
+                    <GridViewColumn x:Name="fromDateColumn" DisplayMemberBinding="{ Binding GetFromDateAsString}" Header="From Date" Width="75"/>
+                    <GridViewColumn x:Name="toDateColumn" DisplayMemberBinding="{Binding GetToDateAsString}" Header="To Date" Width="75"/>
+                    <GridViewColumn x:Name="categoryColumn" DisplayMemberBinding="{Binding Category}" Header="Category" Width="100"/>
+                    <GridViewColumn x:Name="priorityColumn" DisplayMemberBinding="{Binding Priority}" Header="Priority" Width="100"/>
+                    <GridViewColumn x:Name="stateColumn" DisplayMemberBinding="{Binding State}" Header="State" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -77,3 +77,7 @@ C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Pages\AppointmentListView.g.
 C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Pages\AppointmentListView.baml
 C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Appointment\AppointmentWindow.baml
 C:\Users\zengo\Documents\git\Terminplaner\obj\Debug\Appointment\AppointmentWindow.g.cs
+C:\Users\Marvin\Documents\Projects\Terminplaner\obj\Debug\Appointment\AppointmentWindow.baml
+C:\Users\Marvin\Documents\Projects\Terminplaner\obj\Debug\Appointment\AppointmentWindow.g.cs
+C:\Users\Marvin\Documents\Projects\Terminplaner\obj\Debug\Pages\AppointmentListView.g.cs
+C:\Users\Marvin\Documents\Projects\Terminplaner\obj\Debug\Pages\AppointmentListView.baml

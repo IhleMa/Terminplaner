@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace Terminplaner.Classes
@@ -7,9 +8,9 @@ namespace Terminplaner.Classes
     class ConnectionClass
     {
         private MySqlConnection connection;
-        string host = "sql7.freemysqlhosting.net";
-        string database = "sql7258286";
-        string username = "sql7258286";
+        string host = "localhost";
+        string database = "pdbsj2o876";
+        string username = "root";
         string password;
 
         public ConnectionClass()
@@ -19,10 +20,6 @@ namespace Terminplaner.Classes
 
         private void Initialize()
         {
-            host = "localhost";
-            database = "testSchule";
-            username = "root";
-            password = "";
             string connectionString;
             connectionString = "SERVER=" + host + ";" + "DATABASE=" + database + ";" + "UID=" + username + ";" + "PASSWORD=" + password + ";";
 
@@ -57,11 +54,55 @@ namespace Terminplaner.Classes
             }
         }
 
-        public void useStatement(string statement) {
-
-            string stm = "SELECT VERSION()";
-            MySqlCommand cmd = new MySqlCommand(stm, connection);
-            string version = Convert.ToString(cmd.ExecuteScalar());
+        public void InsertAppointment(Pages.Appointment appointment)
+        {
+            OpenConnection();
+            MySqlCommand command = new MySqlCommand();
+            command.CommandText = "INSERT INTO appointments VALUES(?id, ?title,?state,?priority,?category,?fromDate,?toDate)";
+            command.Parameters.AddWithValue("?id", command.LastInsertedId);
+            command.Parameters.AddWithValue("?title", appointment.Title);
+            command.Parameters.AddWithValue("?state", appointment.State);
+            command.Parameters.AddWithValue("?priority", appointment.Priority);
+            command.Parameters.AddWithValue("?category", appointment.Category);
+            command.Parameters.AddWithValue("?fromDate", appointment.FromDate);
+            command.Parameters.AddWithValue("?toDate", appointment.ToDate);
+            command.Connection = GetConnection();
+            
+            command.ExecuteNonQuery();
         }
+
+        public List<Pages.Appointment> GetAppointments()
+        {
+            List<Pages.Appointment> appointments = new List<Pages.Appointment>();
+            try
+            {
+                OpenConnection();
+                MySqlDataReader reader = null;
+                string selectCmd = "SELECT * FROM  appointments";
+
+                MySqlCommand command = new MySqlCommand(selectCmd, GetConnection());
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    appointments.Add(new Pages.Appointment() { Title = (string)reader["title"], FromDate = (DateTime)reader["fromDate"], ToDate = (DateTime)reader["toDate"], Category = (string)reader["category"], Priority = (int)reader["priority"], State = (int)reader["state"] });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+            return appointments;
+        }
+
+        public MySqlConnection GetConnection()
+        {
+            return connection;
+        }
+
     }
+
+    
 }

@@ -33,8 +33,8 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Name="descriptionTextBlock" Text="Description:" FontFamily="Consolas" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-            <TextBox Name="descriptionTextBox" Text="" Grid.Row="0" Grid.Column="1" FontFamily="Consolas" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,15"/>
+            <TextBlock Name="titleTextBlock" Text="Title:" FontFamily="Consolas" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <TextBox Name="titleTextBox" Text="" Grid.Row="0" Grid.Column="1" FontFamily="Consolas" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,15"/>
 
             <TextBlock Name="appointmentFromDatePickerTextBlock" Text="From Date:" FontFamily="Consolas" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,5,0"/>
             <DatePicker Name="appointmentFromDatePicker" Grid.Row="1" Grid.Column="1" FontFamily="Consolas" Margin="0,0,0,15"/>
@@ -42,8 +42,8 @@
             <TextBlock Name="appointmentToDatePickerTextBlock" Text="To Date:" FontFamily="Consolas" Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,5,0"/>
             <DatePicker Name="appointmentToDatePicker" Grid.Row="2" Grid.Column="1" FontFamily="Consolas" Margin="0,0,0,15"/>
 
-            <TextBlock Name="appointmentTypeTextBlock" Text="Type:" Grid.Row="3" FontFamily="Consolas" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-            <ComboBox Name="appointmentTypeComboBox" Grid.Row="3" Grid.Column="1" FontFamily="Consolas" Margin="0,0,0,15">
+            <TextBlock Name="appointmentCategoryTextBlock" Text="Category:" Grid.Row="3" FontFamily="Consolas" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+            <ComboBox Name="appointmentCategoryComboBox" Grid.Row="3" Grid.Column="1" FontFamily="Consolas" Margin="0,0,0,15">
                 <ComboBoxItem Name="appointment" Content="Appointment"/>
                 <ComboBoxItem Name="business" Content="Business"/>
                 <ComboBoxItem Name="school" Content="School"/>
